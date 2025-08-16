@@ -2,8 +2,6 @@ from argparse import Namespace
 from math import e
 from os import name
 from re import S
-from socket import fromshare
-import time
 from turtle import st
 from fastapi import FastAPI, Form, Request
 from fastapi.templating import Jinja2Templates
@@ -62,3 +60,4 @@ def submitregister (request: Request, nameSurname: str = Form(...), email: str =
 
 
     
+
