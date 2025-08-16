@@ -17,9 +17,9 @@ canUse = False
 
 app = FastAPI()
 
-templates = Jinja2Templates(directory="/")
+templates = Jinja2Templates(directory="templates")
 
-app.mount("/static", StaticFiles(directory="/"), name="static")
+app.mount("/static", StaticFiles(directory="templates/static"), name="static")
 
 @app.get("/", response_class=HTMLResponse)
 def loginPage(request:Request):
@@ -59,5 +59,6 @@ def submitregister (request: Request, nameSurname: str = Form(...), email: str =
 
                     else:
                         return templates.TemplateResponse("kayit.html", {"request": request, "msg": "Lütfen şifrenizi doğru bir şekilde tekrar giriniz."}) 
+
 
     
