@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobil Eczane - Kayıt</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <!-- Kayıt Formu -->
+            <div class="form-container signup-container">
+                <form action="/submitregister" method="POST">
+                    <h1>Hesap Oluştur</h1>
+                    <span>E-posta ile kayıt olun</span>
+                    
+                    <input type="text" placeholder="Ad Soyad" name="nameSurname" required>
+                    <input type="email" placeholder="E-posta" name="email" required>
+                    <input type="password" placeholder="Şifre" name="password" required>
+                    <input type="password" placeholder="Şifre Tekrar" name="passwordAgain" required>
+                    <button type="submit">Kayıt Ol</button>
+                    
+                    <!-- Kayıt Durumu Mesajı -->
+                    <p class="status-message"> {{msg}} </p>
+                    {% if canRequest %}
+                    <meta http-equiv="refresh" content="3; url=/">
+                    {% endif %}
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
